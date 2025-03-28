@@ -4,21 +4,42 @@ print(randrange(10))
 
 numbers = [randrange(10), randrange(10), randrange(10), randrange(10)]
 
+test_sorted_array = [1, 3, 6, 9]
+
+sorted_array = []
+
 print(numbers)
 
-def sort(x):
+print(sorted_array)
+
+print(test_sorted_array)
+
+def check_sorted(x):
+    sorted_count = 0
+    for i in range(len(x)):
+        if i + 1 == len(x):
+            break
+        else:
+            if x[i] < x[i + 1]:
+                sorted_count = sorted_count + 1
+                if sorted_count + 1 == len(x):
+                    return True 
+
+def sort(x, y):
     for i in range(len(x)):
         if i + 1 == len(x):
             print("At position " + str(i))
             print(x[i])
         else:
-            print("At position " + str(i))
-            print(x[i])
-            print("Next position " + str(i + 1))
-            print("Data at next position " + str(x[i + 1]))
-        print("At position " + str(i))
-        print(x[i])
-        print("Next position " + str(i + 1))
-        print("Data at next position " + str(x[i + 1]))
+            if x[i] < x[i + 1]:
+                print("smaller than other")
+                y.append(x[i])
+            elif x[i] > x[i + 1]:
+                print("bigger than other")
+            elif x[i] == x[i + 1]:
+                print("equal to other")
 
-sort(numbers)
+sort(numbers, sorted_array)
+print(sorted_array)
+
+check_sorted(test_sorted_array)
