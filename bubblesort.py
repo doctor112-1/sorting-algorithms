@@ -1,6 +1,5 @@
 import random
 from random import randrange
-print(randrange(10))
 
 numbers = [randrange(10), randrange(10), randrange(10), randrange(10)]
 
@@ -10,10 +9,6 @@ sorted_array = []
 
 print(numbers)
 
-print(sorted_array)
-
-print(test_sorted_array)
-
 def check_sorted(x):
     sorted_count = 0
     for i in range(len(x)):
@@ -22,8 +17,11 @@ def check_sorted(x):
         else:
             if x[i] < x[i + 1]:
                 sorted_count = sorted_count + 1
-                if sorted_count + 1 == len(x):
-                    return True 
+    if sorted_count + 1 == len(x):
+        print(sorted_count)
+    else:
+        print("not sorted")
+
 
 def sort(x, y):
     for i in range(len(x)):
@@ -33,13 +31,13 @@ def sort(x, y):
         else:
             if x[i] < x[i + 1]:
                 print("smaller than other")
-                y.append(x[i])
             elif x[i] > x[i + 1]:
                 print("bigger than other")
             elif x[i] == x[i + 1]:
                 print("equal to other")
 
-sort(numbers, sorted_array)
-print(sorted_array)
+#sort(numbers, sorted_array)
 
-check_sorted(test_sorted_array)
+#print(sorted_array)
+
+print(check_sorted(test_sorted_array))
