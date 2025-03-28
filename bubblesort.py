@@ -24,20 +24,22 @@ def check_sorted(x):
 
 
 def sort(x, y):
-    for i in range(len(x)):
-        if i + 1 == len(x):
-            print("At position " + str(i))
-            print(x[i])
-        else:
-            if x[i] < x[i + 1]:
-                print("smaller than other")
-            elif x[i] > x[i + 1]:
-                print("bigger than other")
-            elif x[i] == x[i + 1]:
-                print("equal to other")
+    is_sorted = check_sorted(x)
+    if is_sorted == True:
+        return True
+    else:
+            for i in range(len(x)):
+                if i + 1 == len(x):
+                    print("At position " + str(i))
+                    print(x[i])
+                else:
+                    if x[i] < x[i + 1]:
+                        print("smaller than other")
+                    elif x[i] > x[i + 1]:
+                        print("bigger than other")
+                    elif x[i] == x[i + 1]:
+                        print("equal to other")
 
-#sort(numbers, sorted_array)
+sort(numbers, sorted_array)
 
-#print(sorted_array)
-
-print(check_sorted(test_sorted_array))
+print(sorted_array)
