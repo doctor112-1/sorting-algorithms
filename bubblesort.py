@@ -18,9 +18,9 @@ def check_sorted(x):
             if x[i] < x[i + 1]:
                 sorted_count = sorted_count + 1
     if sorted_count + 1 == len(x):
-        print(sorted_count)
+        return True
     else:
-        print("not sorted")
+        return False
 
 
 def sort(x, y):
