@@ -3,12 +3,6 @@ from random import randrange
 
 numbers = [randrange(10), randrange(10), randrange(10), randrange(10)]
 
-save = numbers
-
-test_sorted_array = [1, 3, 6, 9]
-
-sorted_array = []
-
 print(numbers)
 
 def check_sorted(x):
@@ -32,23 +26,15 @@ def sort(x):
     else:
             for i in range(len(x)):
                 if i + 1 == len(x):
-                    print("At position " + str(i))
-                    print(x[i])
+                   break 
                 else:
-                    if x[i] < x[i + 1]:
-                        print("smaller than other")
-                    elif x[i] > x[i + 1]:
-                        print("bigger than other")
+                    if x[i] > x[i + 1]:
                         temp = x[i]
                         temp1 = x[i + 1]
                         x[i] = temp1
                         x[i + 1] = temp
                         print(x)
-                    elif x[i] == x[i + 1]:
-                        print("equal to other")
     sort(x)
 
 sort(numbers)
 
-print(numbers)
-print(save)
