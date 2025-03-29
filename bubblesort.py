@@ -3,6 +3,8 @@ from random import randrange
 
 numbers = [randrange(10), randrange(10), randrange(10), randrange(10)]
 
+save = numbers
+
 test_sorted_array = [1, 3, 6, 9]
 
 sorted_array = []
@@ -15,7 +17,7 @@ def check_sorted(x):
         if i + 1 == len(x):
             break
         else:
-            if x[i] < x[i + 1]:
+            if x[i] < x[i + 1] or x[i] == x[i + 1]:
                 sorted_count = sorted_count + 1
     if sorted_count + 1 == len(x):
         return True
@@ -23,7 +25,7 @@ def check_sorted(x):
         return False
 
 
-def sort(x, y):
+def sort(x):
     is_sorted = check_sorted(x)
     if is_sorted == True:
         return True
@@ -37,9 +39,16 @@ def sort(x, y):
                         print("smaller than other")
                     elif x[i] > x[i + 1]:
                         print("bigger than other")
+                        temp = x[i]
+                        temp1 = x[i + 1]
+                        x[i] = temp1
+                        x[i + 1] = temp
+                        print(x)
                     elif x[i] == x[i + 1]:
                         print("equal to other")
+    sort(x)
 
-sort(numbers, sorted_array)
+sort(numbers)
 
-print(sorted_array)
+print(numbers)
+print(save)
