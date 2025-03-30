@@ -3,8 +3,6 @@ from random import randrange
 
 numbers = [randrange(10), randrange(10), randrange(10), randrange(10)]
 
-big_numbers = random.sample(range(1, 100001), 100000)
-
 print(numbers)
 
 def check_sorted(x):
@@ -26,12 +24,10 @@ def sort(x):
     if is_sorted == True:
         return True
     else:
-            for i in range(len(x) - 1, 0, -1):
-                if x[i] > x[i - 1]:
-                    temp = x[i]
-                    temp1 = x[i + 1]
-                    x[i] = temp1
-                    x[i + 1] = temp
+            for n in range(len(x) - 1, 0, -1):
+                for i in range(n):
+                    if x[i] > x[i + 1]:
+                        x[i], x[i + 1] = x[i + 1], x[i]
 
 sort(numbers)
 print(numbers)
